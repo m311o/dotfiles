@@ -1,0 +1,13 @@
+set folder          = "~/.mail/triathlon"
+set sendmail        = "/usr/bin/msmtp -a gmail"
+set spoolfile       = "+Inbox"
+set from            = "tri.davidpinto@gmail.com"
+
+set mbox_type       = Maildir
+set mbox            = "+Archive"
+set record          = "+Sent Mail"
+
+# Personal
+set realname="David Pinto"
+set signature="+@"
+my_hdr From: David Pinto tri.davidpinto@gmail.com

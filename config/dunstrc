@@ -1,0 +1,64 @@
+[global]
+    font = xos4 Terminus 8
+    allow_markup = yes
+    format = "<b>%s</b>%b%p"
+    sort = yes
+    indicate_hidden = yes
+    alignment = center
+    bounce_freq = 0
+    show_age_threshold = 60
+    word_wrap = yes
+    ignore_newline = no
+    geometry = "300x5-10+28"
+    shrink = yes
+    transparency = 0
+    idle_threshold = 120
+    monitor = 0
+    follow = mouse
+    sticky_history = yes
+    history_length = 20
+    show_indicators = yes
+    line_height = 0
+    separator_height = 1
+    padding = 5
+    horizontal_padding = 5
+    separator_color = frame
+    startup_notification = true
+    dmenu = /usr/bin/dmenu -p >>
+    browser = /usr/bin/qutebrowser
+    icon_position = off
+    icon_folders = /usr/share/icons/Adwaita/16x16/status/
+
+[frame]
+    width = 2
+    color = "#FFAFB8"
+
+[shortcuts]
+    close = ctrl+space
+    close_all = ctrl+shift+space
+    history = ctrl+grave
+    context = ctrl+shift+period
+
+[urgency_low]
+    background = "#240004"
+    foreground = "#FFAFB8"
+    icon = dialog-information
+    format = %b
+    timeout = 5
+
+[urgency_normal]
+    background = "#FF384C"
+    foreground = "#240004"
+    icon = dialog-information
+    format = %b
+    timeout = 15
+
+[urgency_critical]
+    background = "#EB38FF"
+    foreground = "#0c1014"
+    icon = dialog-information
+    format = %b
+    timeout = 0
+
+
+# vim: ft=cfg

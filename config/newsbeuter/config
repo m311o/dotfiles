@@ -1,0 +1,40 @@
+# -- Settings -----------
+
+auto-reload yes
+cleanup-on-quit yes
+feed-sort-order title-dec
+refresh-on-startup yes
+podcast-auto-enqueue yes
+
+# -- Bindings -----------
+
+bind-key j down
+bind-key k up
+
+bind-key l next-feed
+bind-key h prev-feed
+
+bind-key C set-tag
+bind-key c select-tag
+
+bind-key M mark-all-feeds-read
+bind-key t toggle-show-read-feeds
+
+bind-key c pb-cancel podbeuter
+
+# -- Variables -----------
+
+browser "elinks %u"
+articlelist-format "%D %?a?%10a? %f %?T?<%-17T>?%t"
+
+
+# -- Macros -------------
+
+macro i set browser "feh %u" ; goto-url ; set browser "elinks %u"
+macro t set browser "transmission-remote -a %u -w $HOME/Videos/Anime -s > ~/log"; open-in-browser ; set browser "elinks %u"
+
+# -- Podcast ------------
+
+download-path "~/Music/Podcasts/%n"
+max-downloads 3
+player "playpod"

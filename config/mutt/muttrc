@@ -1,0 +1,89 @@
+ignore *
+unignore from: to: cc: date: subject:
+hdr_order from: to: cc: date: subject:
+
+set copy=no
+
+# Mailbox
+set editor="vim -c 'set syntax=mail ft=mail enc=utf-8'"
+
+# Personal
+set hidden_host=yes
+
+# Sending
+set envelope_from=yes
+set sendmail_wait = -1
+set send_charset="utf-8"
+
+# Basic
+set timeout=3
+set wait_key=no
+set delete
+set pipe_decode
+set mailcap_path="~/.config/mutt/mailcap"
+set use_domain=no
+set user_agent=no
+set sleep_time=0
+set menu_scroll
+
+# Composing
+set edit_headers
+set fast_reply
+set askcc
+
+# HTML Message
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+
+# Printint
+
+# PGP
+
+# Status Bar
+set status_chars=" *%A"
+set status_format="───[ Folder: %f ]───[%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]───%>─%?p?( %p postponed )?───"
+
+# Index view
+set date_format="%d-%m-%Y %H:%M"
+set index_format="[%Z] %D %-20.20F %s"
+set sort=threads
+set sort_aux=reverse-last-date-received
+set uncollapse_jump
+set strict_threads
+set thorough_search
+
+# Pager View
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+
+set forward_format = "Fwd: %s"
+set forward_quote
+set reply_to
+set reverse_name
+set include
+set tilde
+set mime_forward = ask-no
+
+unset help
+unset confirmappend
+unset mark_old
+unset markers
+unset record
+unset sort_re
+unset wait_key
+
+source ~/.config/mutt/colors
+source ~/.config/mutt/mailboxes
+
+macro index <f2> '<change-folder>~/.mail/triathlon/Inbox<enter>'
+macro index <f3> '<change-folder>~/.mail/university/Inbox<enter>'
+macro index <f4> '<change-folder>~/.mail/education/Inbox<enter>'
+macro index <f5> '<change-folder>~/.mail/m3llo/Inbox<enter>'
+
+folder-hook triathlon/*  source ~/.config/mutt/accounts/triathlon
+folder-hook m3llo/*     source ~/.config/mutt/accounts/m3llo
+folder-hook education/* source ~/.config/mutt/accounts/education
+folder-hook university/* source ~/.config/mutt/accounts/university
+
+source ~/.config/mutt/accounts/triathlon # default account

@@ -1,0 +1,160 @@
+# == General Settings ===
+
+font -*-xos4 terminus-r-*-*-8-*-*-*-*-*-*-*
+
+# -- Workspaces ---------
+
+set $ws1 1
+set $ws2 2
+set $ws3 3
+set $ws4 4
+set $ws5 5
+set $ws6 6
+set $ws7 7
+set $ws8 8
+set $ws9 9
+set $ws0 0
+
+# -- Modifiers ----------
+
+set $mod Mod1
+floating_modifier $mod
+
+# -- Windows ------------
+
+new_window pixel 4
+new_float pixel 4
+
+# == Theme ==============
+
+# -- Gaps ---------------
+
+gaps inner 8
+gaps outer 4
+
+# -- Colours ------------
+
+#                         border  bg      text    indicat child_border
+client.focused            #383838 #0e0d0e #BBBBBB #FF384C #A50011
+client.focused_inactive   #1A1A1A #0d010d #424242 #A50011 #A50011
+client.unfocused          #030706 #0d010d #4F4F4F #A50011 #A50011
+client.urgent             #1A1A1A #0d010d #a5a5a5 #A50011 #A50011
+client.background         #121212
+
+# == Bindings ===========
+
+# -- i3 Control ---------
+
+bindsym $mod+Shift+R restart
+bindsym $mod+Shift+Q exit
+bindsym $mod+q kill
+bindsym $mod+Shift+F fullscreen
+
+# -- Workspace Control --
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# -- Window Control -----
+
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+bindsym $mod+Shift+h move left 100 px
+bindsym $mod+Shift+j move down 100 px
+bindsym $mod+Shift+k move up 100 px
+bindsym $mod+Shift+l move right 100 px
+
+bindsym $mod+minus split v
+bindsym $mod+bar split h
+
+# -- Layout Control -----
+
+bindsym $mod+Shift+s move scratchpad
+bindsym $mod+s scratchpad show
+bindsym $mod+space floating toggle
+bindsym $mod+Tab focus mode_toggle
+
+bindsym $mod+Shift+t layout tabbed
+bindsym $mod+t layout toggle split
+
+# == Modes ==============
+
+mode "resize" {
+    bindsym h resize shrink width 10 px or 10 ppt
+    bindsym j resize grow height 10 px or 10 ppt
+    bindsym k resize shrink height 10 px or 10 ppt
+    bindsym l resize grow width 10 px or 10 ppt
+
+    bindsym Shift+h move left 100 px
+    bindsym Shift+j move down 100 px
+    bindsym Shift+k move up 100 px
+    bindsym Shift+l move right 100 px
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $mod+z mode "resize"
+
+# == Launchers ==========
+
+bindsym $mod+r exec /usr/bin/i3-dmenu-desktop --dmenu='dmenu -i -p ">>" -fn "xos4 terminus-10" -sb "#590912" -nb "#590912" -sf "#ff384c" -nf "#ffafb8"' --entry-type=command
+bindsym $mod+Return exec /usr/bin/urxvt
+bindsym $mod+Shift+m exec /usr/bin/urxvt -e /usr/bin/mutt
+bindsym $mod+c exec /usr/bin/urxvt -e /usr/bin/calcurse
+bindsym $mod+m exec /usr/bin/urxvt -e /usr/bin/ncmpcpp
+bindsym $mod+i exec /usr/bin/qutebrowser
+bindsym $mod+f exec /usr/bin/urxvt -e /usr/bin/ranger
+bindsym $mod+n exec /usr/bin/urxvt -e /usr/bin/newsbeuter
+bindsym $mod+p exec /usr/bin/urxvt -e /usr/bin/podbeuter
+bindsym $mod+v exec /usr/bin/urxvt -e /usr/bin/vim
+
+# == System Bindings ====
+
+bindsym $mod+Up exec $HOME/.local/bin/brightness + 5
+bindsym $mod+Down exec $HOME/.local/bin/brightness - 5
+bindsym $mod+XF86MonBrightnessUp exec $HOME/.local/bin/brightness + 5
+bindsym $mod+XF86MonBrightnessDown exec $HOME/.local/bin/brightness - 5
+bindsym $mod+Right exec $HOME/.local/bin/volume 5%+
+bindsym $mod+Left exec $HOME/.local/bin/volume 5%-
+bindsym XF86AudioRaiseVolume exec $HOME/.local/bin/volume 5%+
+bindsym XF86AudioLowerVolume exec $HOME/.local/bin/volume 5%-
+bindsym XF86AudioMute exec $HOME/.local/bin/volume toggle
+bindsym $mod+F7 exec /usr/bin/mpc prev
+bindsym $mod+F9 exec /usr/bin/mpc next
+bindsym $mod+F8 exec /usr/bin/mpc toggle
+
+#
+# Autostart
+#
+
+exec_always --no-startup-id /usr/bin/xrdb $HOME/.Xresources
+exec_always --no-startup-id /usr/bin/setxkbmap -layout us -variant custom -option caps:swapescape
+exec_always --no-startup-id /usr/bin/dunst
+exec_always --no-startup-id /usr/bin/feh --bg-scale $WALLPAPER
+exec_always --no-startup-id /usr/bin/compton
+exec_always --no-startup-id /usr/bin/mpd
+exec_always --no-startup-id /usr/bin/killall lemonbar; /bin/sh $HOME/.config/i3/panel-top.sh &
+exec_always --no-startup-id /usr/bin/killall lemonbar; /bin/sh $HOME/.config/i3/panel-bottom.sh &

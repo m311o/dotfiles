@@ -1,0 +1,13 @@
+set folder          = "~/.mail/m3llo"
+set sendmail        = "/usr/bin/msmtp -a gmail"
+set spoolfile       = "+Inbox"
+set from            = "m3llom4rs@gmail.com"
+
+set mbox_type       = Maildir
+set mbox            = "+Archive"
+set record          = "+Sent Mail"
+
+# Personal
+set realname="m3llo"
+set signature="+@"
+my_hdr From: m3llo m3llom4rs@gmail.com

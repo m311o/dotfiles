@@ -1,0 +1,6 @@
+alias ls='/bin/ls -N --color'
+alias l='ls'
+alias la='ls -a'
+alias music='/usr/bin/ncmpcpp -c ~/.config/ncmpcpp/config'
+alias c='cdls'
+alias rmf='rm -rf -I'

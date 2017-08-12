@@ -1,0 +1,115 @@
+!-------------------------------------------
+! XFT Settings gre
+     
+Xft.antialias:  true 
+Xft.autohint:   false 
+Xft.dpi:        96
+Xft.hinting:    true 
+Xft.hintstyle:  hintfull 
+Xft.lcdfilter:  lcddefault
+Xft.rgba:       rgb
+
+!-------------------------------------------
+! URXVT - Settings
+
+URxvt*depth:                        32
+URxvt*internalBorder:               5
+URxvt*dynamicColors:                on
+URxvt*urgentOnBell:                 true
+URxvt*borderLess:                   false
+URxvt*scrollBar:                    false
+URxvt*cursorBlink:                  true
+URxvt*cursorUnderline:              false
+URxvt*cursorColor:                  #99d1ce
+URxvt*scrollColor:                  #11151c
+URxvt*underlineURLs:                true
+URxvt*letterSpace:                  2
+URxvt.background: rgba:2400/0000/0400/CC00
+URxvt.inputMethod: ibus
+URxvt.preeditType: OverTheSpot
+
+*font: xft:xos4 terminus:size=10:antialias=true
+*boldFont: xft:xos4 terminus:size=10:antialias=true
+ 
+!--------------------------------------------
+! URxvt Colors
+
+URxvt.colorIT:                       #33859e
+URxvt.colorBD:                       #c23127
+URxvt.colorUL:                       #edb443
+
+! --- ~/.Xresources ------------------------------------------------------------
+! ------------------------------------------------------------------------------
+! --- generated with 4bit Terminal Color Scheme Designer -----------------------
+! ------------------------------------------------------------------------------
+! --- http://ciembor.github.com/4bit -------------------------------------------
+! ------------------------------------------------------------------------------
+
+! --- special colors ---
+
+*background: #240004
+*foreground: #ffafb8
+
+! --- standard colors ---
+
+! black
+*color0: #590912
+
+! bright_black
+*color8: #590912
+
+! red
+*color1: #a50011
+
+! bright_red
+*color9: #ff384c
+
+! green
+*color2: #11a500
+
+! bright_green
+*color10: #4cff38
+
+! yellow
+*color3: #a59500
+
+! bright_yellow
+*color11: #ffeb38
+
+! blue
+*color4: #525ba5
+
+! bright_blue
+*color12: #384cff
+
+! magenta
+*color5: #9500a5
+
+! bright_magenta
+*color13: #eb38ff
+
+! cyan
+*color6: #00a595
+
+! bright_cyan
+*color14: #38ffeb
+
+! white
+*color7: #ffafb8
+
+! bright_white
+*color15: #ffafb8
+
+
+! ------------------------------------------------------------------------------
+! --- end of terminal colors section -------------------------------------------
+! ------------------------------------------------------------------------------
+
+!-------------------------------------------
+! Man pages colors
+
+*VT100.colorBDMode:                  true
+*VT100.colorBD:                      red
+*VT100.colorULMode:                  true
+*VT100.colorUL:                      cyan
+*VT100.veryBoldColors:               6

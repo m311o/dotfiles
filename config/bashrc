@@ -1,0 +1,50 @@
+# Source login commands
+if [ -f $HOME/.bash_login ]; then
+	. $HOME/.bash_login
+fi
+
+# Source aliases
+if [ -f $HOME/.bash_aliases ]; then
+	. ~/.bash_aliases
+fi
+
+# Source dircolors
+if [ -f $HOME/.dircolors ]; then
+	. ~/.dircolors
+fi
+
+# Environment Variables
+export PATH=$HOME/.local/bin:$PATH
+export GTK_IM_MODULE_FILE=/usr/lib/gtk-3.0/3.0.0/immodues.cache
+
+export MUSIC=$HOME/Music
+export DOCUMENTS=$HOME/Documents
+export DOWNLOADS=$HOME/Downloads
+export PICTURES=$HOME/Pictures
+export VIDEOS=$HOME/Videos
+
+export EDITOR=/usr/bin/vim
+export BROWSER=/usr/bin/qutebrowser
+export TERMINAL=/usr/bin/urxvt
+
+# The Fuck
+if [ -f /usr/bin/thefuck ]; then
+    eval $(thefuck --alias)
+fi
+
+# Bash prompt
+export PS1="\w > "
+
+# Vita SDK
+export VITASDK=/usr/local/vitasdk
+export PATH=$VITASDK/bin:$PATH
+export PSP2CGC=/usr/bin/wine\ /home/mello/Documents/vitasdk/26/sdk/host_tools/build/bin/psp2cgc.exe
+
+# === Functions ===
+
+# wttr Weather Forecast
+wttr()
+{
+    # change Paris to your default location
+    curl -H "Accept-Language: ${LANG%_*}" wttr.in/"${1:-Broadbeach}"
+}
